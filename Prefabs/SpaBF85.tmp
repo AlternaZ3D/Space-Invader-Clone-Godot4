@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://5b752qx7dm54"]
+
+[ext_resource type="Script" path="res://Prefabs/SpawnPoints.gd" id="1_765bo"]
+
+[node name="SpawnPoints" type="Node2D" node_paths=PackedStringArray("_player_spawn", "_barrier_spawn")]
+script = ExtResource("1_765bo")
+_player_spawn = [NodePath("PlayerSpawn/PlayerSpawn")]
+_barrier_spawn = [NodePath("BarrierSpawn/BarrierSpawn1"), NodePath("BarrierSpawn/BarrierSpawn2"), NodePath("BarrierSpawn/BarrierSpawn3"), NodePath("BarrierSpawn/BarrierSpawn4")]
+
+[node name="PlayerSpawn" type="Node" parent="."]
+
+[node name="PlayerSpawn" type="Node2D" parent="PlayerSpawn"]
+position = Vector2(300, 700)
+
+[node name="BarrierSpawn" type="Node" parent="."]
+
+[node name="BarrierSpawn1" type="Node2D" parent="BarrierSpawn"]
+position = Vector2(120, 600)
+
+[node name="BarrierSpawn2" type="Node2D" parent="BarrierSpawn"]
+position = Vector2(240, 600)
+
+[node name="BarrierSpawn3" type="Node2D" parent="BarrierSpawn"]
+position = Vector2(360, 600)
+
+[node name="BarrierSpawn4" type="Node2D" parent="BarrierSpawn"]
+position = Vector2(480, 600)
