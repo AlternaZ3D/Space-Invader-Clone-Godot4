@@ -1,11 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://dbpfushie8sdt"]
+[gd_scene load_steps=9 format=3 uid="uid://dbpfushie8sdt"]
 
 [ext_resource type="PackedScene" uid="uid://0gk1i6rk2ba2" path="res://Prefabs/BG.tscn" id="1_5r7nt"]
 [ext_resource type="PackedScene" uid="uid://dgv0f522uhvtm" path="res://Prefabs/Player.tscn" id="1_v4fkh"]
 [ext_resource type="PackedScene" uid="uid://csw8pkvj4je8x" path="res://Prefabs/GamePlayUI.tscn" id="2_pbc6t"]
+[ext_resource type="PackedScene" uid="uid://xa7d0jlnoep6" path="res://Prefabs/Enemy_Parent.tscn" id="4_i7yg5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_02kej"]
 size = Vector2(610, 124)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tdgsk"]
+size = Vector2(139, 849)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c0rrc"]
+size = Vector2(139, 849)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_urr0b"]
+size = Vector2(574, 36)
 
 [node name="GAME_PLAY" type="Node2D"]
 
@@ -24,6 +34,25 @@ shape = SubResource("RectangleShape2D_02kej")
 [node name="Lower" type="CollisionShape2D" parent="Boundary"]
 position = Vector2(295, 802)
 shape = SubResource("RectangleShape2D_02kej")
+
+[node name="Direction change" type="Area2D" parent="." groups=["direction_change"]]
+
+[node name="Left" type="CollisionShape2D" parent="Direction change"]
+position = Vector2(-59.5, 414.5)
+shape = SubResource("RectangleShape2D_tdgsk")
+
+[node name="Right" type="CollisionShape2D" parent="Direction change"]
+position = Vector2(662.5, 427.5)
+shape = SubResource("RectangleShape2D_c0rrc")
+
+[node name="Border" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Border"]
+position = Vector2(302, 672)
+shape = SubResource("RectangleShape2D_urr0b")
+
+[node name="Enemy_Parent" parent="." instance=ExtResource("4_i7yg5")]
+position = Vector2(300, 300)
 
 [node name="GamePlayUI" parent="." instance=ExtResource("2_pbc6t")]
 
