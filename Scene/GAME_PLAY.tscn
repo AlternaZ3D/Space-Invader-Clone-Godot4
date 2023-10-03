@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bxio86r21kw3s"]
+[gd_scene load_steps=12 format=3 uid="uid://bxio86r21kw3s"]
 
 [ext_resource type="PackedScene" uid="uid://0gk1i6rk2ba2" path="res://Prefabs/BG.tscn" id="1_5r7nt"]
 [ext_resource type="PackedScene" uid="uid://dgv0f522uhvtm" path="res://Prefabs/Player.tscn" id="1_v4fkh"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Script/Bonus Spawn.gd" id="3_jqek5"]
 [ext_resource type="PackedScene" uid="uid://xa7d0jlnoep6" path="res://Prefabs/Enemy_Parent.tscn" id="4_i7yg5"]
 [ext_resource type="PackedScene" uid="uid://c0hu65d7pqkjg" path="res://Prefabs/Enemy_Bonus.tscn" id="4_il64u"]
+[ext_resource type="PackedScene" uid="uid://d8b1wj0maw0p" path="res://Prefabs/Barrier.tscn" id="7_25xlw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_02kej"]
 size = Vector2(610, 124)
@@ -26,6 +27,20 @@ size = Vector2(574, 36)
 [node name="Player" parent="." node_paths=PackedStringArray("_bullet_parent") instance=ExtResource("1_v4fkh")]
 position = Vector2(300, 700)
 _bullet_parent = NodePath("../BulletParent")
+
+[node name="BarrierParent" type="Node2D" parent="."]
+
+[node name="Barrier" parent="BarrierParent" instance=ExtResource("7_25xlw")]
+position = Vector2(92, 576)
+
+[node name="Barrier2" parent="BarrierParent" instance=ExtResource("7_25xlw")]
+position = Vector2(227, 576)
+
+[node name="Barrier3" parent="BarrierParent" instance=ExtResource("7_25xlw")]
+position = Vector2(364, 576)
+
+[node name="Barrier4" parent="BarrierParent" instance=ExtResource("7_25xlw")]
+position = Vector2(499, 576)
 
 [node name="Boundary" type="Area2D" parent="." groups=["boundary"]]
 

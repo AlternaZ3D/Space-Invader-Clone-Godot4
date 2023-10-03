@@ -1,6 +1,6 @@
 extends Area2D
 
-var _speed = 450
+var _speed = 650
 @export var _explode:PackedScene
 #@export var _bullet_parent:Node2D
 
@@ -8,13 +8,13 @@ func _physics_process(delta):
 	global_position -= transform.y * _speed * delta#เคลื่อนที่ขึ้นด้านบนตลอดเวลา
 
 func _on_body_entered(body):
-	if body.is_in_group("enemy")or is_in_group("bonus"):#ตรวจว่าถ้าเป็นenemyให้ทำลายเป้าหมายและกระสุน
+	if body.is_in_group("enemy") or body.is_in_group("bonus"):#ตรวจว่าถ้าเป็นenemyให้ทำลายเป้าหมายและกระสุน
 		body.queue_free()
 		_exploding()
 	pass # Replace with function body.
 
 func _on_area_entered(area):
-	if area.is_in_group("boundary"):#ตรวจว่าชนขอบฉากให้ทำลายกระสุน
+	if area.is_in_group("boundary") or area.is_in_group("barrier"):#ตรวจว่าชนขอบฉากให้ทำลายกระสุน
 		_exploding()
 	pass # Replace with function body.
 	

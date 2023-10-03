@@ -1,6 +1,6 @@
 extends Node2D
 
-const  SPEED_INITIAL:float = 0.3
+const  SPEED_INITIAL:float = 0.25
 var _speed:float
 enum DIRECTION {DOWN, RIGHT, LEFT}
 enum DIFFICULTY {INIT, EASY , NORMAL , HARD , BOSS}
