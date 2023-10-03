@@ -8,7 +8,7 @@ func _physics_process(delta):
 	global_position -= transform.y * _speed * delta#เคลื่อนที่ขึ้นด้านบนตลอดเวลา
 
 func _on_body_entered(body):
-	if body.is_in_group("enemy"):#ตรวจว่าถ้าเป็นenemyให้ทำลายเป้าหมายและกระสุน
+	if body.is_in_group("enemy")or is_in_group("bonus"):#ตรวจว่าถ้าเป็นenemyให้ทำลายเป้าหมายและกระสุน
 		body.queue_free()
 		_exploding()
 	pass # Replace with function body.

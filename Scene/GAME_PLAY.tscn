@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://dbpfushie8sdt"]
+[gd_scene load_steps=11 format=3 uid="uid://bxio86r21kw3s"]
 
 [ext_resource type="PackedScene" uid="uid://0gk1i6rk2ba2" path="res://Prefabs/BG.tscn" id="1_5r7nt"]
 [ext_resource type="PackedScene" uid="uid://dgv0f522uhvtm" path="res://Prefabs/Player.tscn" id="1_v4fkh"]
 [ext_resource type="PackedScene" uid="uid://csw8pkvj4je8x" path="res://Prefabs/GamePlayUI.tscn" id="2_pbc6t"]
+[ext_resource type="Script" path="res://Script/Bonus Spawn.gd" id="3_jqek5"]
 [ext_resource type="PackedScene" uid="uid://xa7d0jlnoep6" path="res://Prefabs/Enemy_Parent.tscn" id="4_i7yg5"]
+[ext_resource type="PackedScene" uid="uid://c0hu65d7pqkjg" path="res://Prefabs/Enemy_Bonus.tscn" id="4_il64u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_02kej"]
 size = Vector2(610, 124)
@@ -50,6 +52,18 @@ shape = SubResource("RectangleShape2D_c0rrc")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Border"]
 position = Vector2(302, 672)
 shape = SubResource("RectangleShape2D_urr0b")
+
+[node name="Bonus Spawn" type="Node2D" parent="." node_paths=PackedStringArray("_spawn_pointL", "_spawn_pointR")]
+script = ExtResource("3_jqek5")
+_bonus_enemy = ExtResource("4_il64u")
+_spawn_pointL = NodePath("Left_side")
+_spawn_pointR = NodePath("Right_side")
+
+[node name="Left_side" type="Node2D" parent="Bonus Spawn"]
+position = Vector2(-168, 147)
+
+[node name="Right_side" type="Node2D" parent="Bonus Spawn"]
+position = Vector2(771, 147)
 
 [node name="Enemy_Parent" parent="." instance=ExtResource("4_i7yg5")]
 position = Vector2(300, 300)

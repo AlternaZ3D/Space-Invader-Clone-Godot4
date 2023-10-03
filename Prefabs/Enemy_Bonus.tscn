@@ -1,14 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://c0hu65d7pqkjg"]
+[gd_scene load_steps=4 format=3 uid="uid://c0hu65d7pqkjg"]
 
-[ext_resource type="Texture2D" uid="uid://b7yuf0qbq00d4" path="res://Sprite/enemy30.png" id="1_72k4j"]
+[ext_resource type="Script" path="res://Script/Enemy_Bonus.gd" id="1_82dun"]
+[ext_resource type="Texture2D" uid="uid://btta7ag8pjt7u" path="res://Sprite/enemy_bonus.png" id="1_ru0o8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qdl6u"]
 size = Vector2(34, 34)
 
-[node name="Enemy_Bonus" type="CharacterBody2D" groups=["enemy"]]
+[node name="Enemy_Bonus" type="CharacterBody2D" groups=["bonus"]]
+scale = Vector2(1.5, 1.5)
+script = ExtResource("1_82dun")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_72k4j")
+texture = ExtResource("1_ru0o8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_qdl6u")
