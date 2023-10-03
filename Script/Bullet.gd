@@ -1,6 +1,6 @@
 extends Area2D
 
-var _speed = 250
+var _speed = 450
 @export var _explode:PackedScene
 #@export var _bullet_parent:Node2D
 

@@ -1,11 +1,10 @@
 extends Node
+var _hi_score:int
 
+func _game_over():#สิ่งที่จะทำเมื่อเกมโอเวอ
+	get_tree().change_scene_to_file("res://Scene/GAME_OVER.tscn")#ไปที่Sceneหน้าGameOver
+	pass
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _you_win():#สิ่งที่จะทำเมื่อเกมโอเวอ
+	get_tree().change_scene_to_file("res://Scene/YOU_WIN.tscn")#ไปที่Sceneหน้าGameOver
 	pass

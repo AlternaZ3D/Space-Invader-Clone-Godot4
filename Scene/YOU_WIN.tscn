@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://q4mdqjqb3hvh"]
+
+[ext_resource type="Script" path="res://Script/scene_changer.gd" id="1_y7x4e"]
+[ext_resource type="PackedScene" uid="uid://0gk1i6rk2ba2" path="res://Prefabs/BG.tscn" id="2_kb8bt"]
+[ext_resource type="PackedScene" uid="uid://c1ibt220h8m2q" path="res://Prefabs/YouWinUI.tscn" id="3_4smwa"]
+
+[node name="YOU WIN" type="Node2D"]
+script = ExtResource("1_y7x4e")
+_key = "confirm"
+_scene = "res://Scene/MAIN_MENU.tscn"
+
+[node name="BG" parent="." instance=ExtResource("2_kb8bt")]
+
+[node name="Node2D" parent="." instance=ExtResource("3_4smwa")]

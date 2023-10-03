@@ -3,7 +3,7 @@ var _destroy_countdown:float = 0.5
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	await get_tree().create_timer(_destroy_countdown).timeout
+	await get_tree().create_timer(_destroy_countdown).timeout#หน่วงเวลาก่อนที่จะลบออก
 	queue_free()
 	pass # Replace with function body.
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://disms13wj8pvu"]
+[gd_scene load_steps=7 format=3 uid="uid://c1ibt220h8m2q"]
 
 [sub_resource type="FontFile" id="FontFile_30ii5"]
 subpixel_positioning = 0
@@ -120,8 +120,10 @@ alignment = 1
 [node name="MenuButton" type="Label" parent="GameOverUI/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Game Over"
+text = "You Win
+Congratulation"
 label_settings = SubResource("LabelSettings_s760l")
+horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="GameOverUI/VBoxContainer"]
 layout_mode = 2

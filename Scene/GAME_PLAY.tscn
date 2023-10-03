@@ -57,3 +57,6 @@ position = Vector2(300, 300)
 [node name="GamePlayUI" parent="." instance=ExtResource("2_pbc6t")]
 
 [node name="BulletParent" type="Node2D" parent="."]
+
+[connection signal="body_entered" from="Direction change" to="Enemy_Parent" method="_on_direction_change_body_entered"]
+[connection signal="body_entered" from="Border" to="Enemy_Parent" method="_on_border_body_entered"]

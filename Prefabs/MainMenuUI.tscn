@@ -113,5 +113,5 @@ offset_right = 20.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "Press 'space' to start"
+text = "Press 'Enter' to start"
 label_settings = SubResource("LabelSettings_tvdo4")
