@@ -1,0 +1,159 @@
+[gd_scene load_steps=7 format=3 uid="uid://disms13wj8pvu"]
+
+[sub_resource type="FontFile" id="FontFile_30ii5"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+face_index = null
+embolden = null
+transform = null
+cache/0/40/0/ascent = 0.0
+cache/0/40/0/descent = 0.0
+cache/0/40/0/underline_position = 0.0
+cache/0/40/0/underline_thickness = 0.0
+cache/0/40/0/scale = 1.0
+cache/0/40/0/kerning_overrides/40/0 = Vector2(0, 0)
+cache/0/40/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/40/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_s760l"]
+font = SubResource("FontFile_30ii5")
+font_size = 40
+outline_size = 5
+
+[sub_resource type="FontFile" id="FontFile_afb7i"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+face_index = null
+embolden = null
+transform = null
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/30/0 = Vector2(0, 0)
+cache/0/20/0/ascent = 0.0
+cache/0/20/0/descent = 0.0
+cache/0/20/0/underline_position = 0.0
+cache/0/20/0/underline_thickness = 0.0
+cache/0/20/0/scale = 1.0
+cache/0/20/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/20/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/20/0/kerning_overrides/30/0 = Vector2(0, 0)
+cache/0/30/0/ascent = 0.0
+cache/0/30/0/descent = 0.0
+cache/0/30/0/underline_position = 0.0
+cache/0/30/0/underline_thickness = 0.0
+cache/0/30/0/scale = 1.0
+cache/0/30/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/30/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/30/0/kerning_overrides/30/0 = Vector2(0, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_jqqm1"]
+font = SubResource("FontFile_afb7i")
+font_size = 30
+
+[sub_resource type="FontFile" id="FontFile_yb74n"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+face_index = null
+embolden = null
+transform = null
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/30/0 = Vector2(0, 0)
+cache/0/30/0/ascent = 0.0
+cache/0/30/0/descent = 0.0
+cache/0/30/0/underline_position = 0.0
+cache/0/30/0/underline_thickness = 0.0
+cache/0/30/0/scale = 1.0
+cache/0/30/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/30/0/kerning_overrides/30/0 = Vector2(0, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_8gjih"]
+font = SubResource("FontFile_yb74n")
+font_size = 30
+outline_size = 5
+
+[node name="Node2D" type="Node2D"]
+
+[node name="GameOverUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 600.0
+offset_bottom = 800.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameOverUI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="MenuButton" type="Label" parent="GameOverUI/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Game Over"
+label_settings = SubResource("LabelSettings_s760l")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GameOverUI/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="MenuButton2" type="Label" parent="GameOverUI/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Your score :"
+label_settings = SubResource("LabelSettings_jqqm1")
+
+[node name="MenuButton3" type="Label" parent="GameOverUI/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "0000"
+label_settings = SubResource("LabelSettings_jqqm1")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="GameOverUI/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="MenuButton4" type="Label" parent="GameOverUI/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "High Score :"
+label_settings = SubResource("LabelSettings_jqqm1")
+
+[node name="MenuButton3" type="Label" parent="GameOverUI/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "0000"
+label_settings = SubResource("LabelSettings_jqqm1")
+
+[node name="MenuButton2" type="Label" parent="GameOverUI/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Press 'Space' to reset"
+label_settings = SubResource("LabelSettings_8gjih")

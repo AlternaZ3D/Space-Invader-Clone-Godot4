@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://bnyinvbrs4kp2"]
+
+[ext_resource type="Script" path="res://Script/scene_changer.gd" id="1_dtlkk"]
+[ext_resource type="PackedScene" uid="uid://0gk1i6rk2ba2" path="res://Prefabs/BG.tscn" id="1_o5s8d"]
+[ext_resource type="PackedScene" uid="uid://disms13wj8pvu" path="res://Prefabs/GameOverUI.tscn" id="1_pk5rd"]
+
+[node name="GAME_OVER" type="Node2D"]
+script = ExtResource("1_dtlkk")
+_key = "confirm"
+_scene = "res://Scene/MAIN_MENU.tscn"
+
+[node name="BG" parent="." instance=ExtResource("1_o5s8d")]
+
+[node name="GameOverUI" parent="." instance=ExtResource("1_pk5rd")]

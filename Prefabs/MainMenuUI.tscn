@@ -1,0 +1,117 @@
+[gd_scene load_steps=6 format=3 uid="uid://b80esf1r8c3wj"]
+
+[ext_resource type="Texture2D" uid="uid://bvth6c18jc30d" path="res://Sprite/main_menu_image.png" id="1_mqhge"]
+
+[sub_resource type="FontFile" id="FontFile_67x8b"]
+face_index = null
+embolden = null
+transform = null
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/40/0 = Vector2(0, 0)
+cache/0/40/0/ascent = 0.0
+cache/0/40/0/descent = 0.0
+cache/0/40/0/underline_position = 0.0
+cache/0/40/0/underline_thickness = 0.0
+cache/0/40/0/scale = 1.0
+cache/0/40/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/40/0/kerning_overrides/40/0 = Vector2(0, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_1u6xw"]
+font = SubResource("FontFile_67x8b")
+font_size = 40
+outline_size = 5
+
+[sub_resource type="FontFile" id="FontFile_vghea"]
+face_index = null
+embolden = null
+transform = null
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/40/0 = Vector2(0, 0)
+cache/0/40/0/ascent = 0.0
+cache/0/40/0/descent = 0.0
+cache/0/40/0/underline_position = 0.0
+cache/0/40/0/underline_thickness = 0.0
+cache/0/40/0/scale = 1.0
+cache/0/40/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/40/0/kerning_overrides/40/0 = Vector2(0, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_tvdo4"]
+font = SubResource("FontFile_vghea")
+font_size = 40
+outline_size = 5
+
+[node name="MainMenuUI" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 600.0
+offset_bottom = 800.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -132.0
+offset_top = 81.0
+offset_right = 134.0
+offset_bottom = 328.0
+grow_horizontal = 2
+texture = ExtResource("1_mqhge")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -152.5
+offset_top = -90.0
+offset_right = 152.5
+offset_bottom = -32.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="Control/HBoxContainer"]
+layout_mode = 2
+text = "High Score :"
+label_settings = SubResource("LabelSettings_1u6xw")
+
+[node name="Label2" type="Label" parent="Control/HBoxContainer"]
+layout_mode = 2
+text = "0000"
+label_settings = SubResource("LabelSettings_1u6xw")
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Press 'space' to start"
+label_settings = SubResource("LabelSettings_tvdo4")
