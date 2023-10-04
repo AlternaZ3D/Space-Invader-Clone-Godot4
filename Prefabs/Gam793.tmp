@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://csw8pkvj4je8x"]
+[gd_scene load_steps=8 format=3 uid="uid://csw8pkvj4je8x"]
 
 [ext_resource type="Texture2D" uid="uid://bkto1i2ynkddn" path="res://Sprite/player.png" id="1_inag7"]
 [ext_resource type="Script" path="res://Script/GamePlayUI.gd" id="1_x8kds"]
@@ -214,27 +214,6 @@ font = SubResource("FontFile_011aw")
 font_size = 40
 outline_size = 5
 
-[sub_resource type="FontFile" id="FontFile_7njon"]
-cache/0/40/0/ascent = 0.0
-cache/0/40/0/descent = 0.0
-cache/0/40/0/underline_position = 0.0
-cache/0/40/0/underline_thickness = 0.0
-cache/0/40/0/scale = 1.0
-cache/0/40/0/kerning_overrides/40/0 = Vector2(0, 0)
-cache/0/40/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/16/0/kerning_overrides/40/0 = Vector2(0, 0)
-cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
-
-[sub_resource type="LabelSettings" id="LabelSettings_kdciu"]
-font = SubResource("FontFile_7njon")
-font_size = 40
-outline_size = 5
-
 [sub_resource type="FontFile" id="FontFile_qoqqr"]
 cache/0/16/0/ascent = 0.0
 cache/0/16/0/descent = 0.0
@@ -328,12 +307,9 @@ font_size = 40
 [sub_resource type="LabelSettings" id="LabelSettings_0ihby"]
 font_size = 40
 
-[node name="GamePlayUI" type="Node2D" node_paths=PackedStringArray("_enemy_left_label", "_score", "_hi_score", "_live")]
+[node name="GamePlayUI" type="Node2D" node_paths=PackedStringArray("_enemy_left_label")]
 script = ExtResource("1_x8kds")
-_enemy_left_label = NodePath("Control/Control4/ENEMY_LEFT_LABEL")
-_score = NodePath("Control/Control/Label2/SCORE_LABEL")
-_hi_score = NodePath("Control/Control3/Label2/HI_SCORE")
-_live = NodePath("Control/Control2/LIVE")
+_enemy_left_label = NodePath("")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -363,12 +339,11 @@ label_settings = SubResource("LabelSettings_yuinv")
 horizontal_alignment = 2
 vertical_alignment = 2
 
-[node name="ENEMY_LEFT_LABEL" type="Label" parent="Control/Control4"]
+[node name="ENEMY_LEFT_LABEL" type="RichTextLabel" parent="Control/Control4"]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 8
+size_flags_horizontal = 0
+size_flags_vertical = 4
 text = "00"
-label_settings = SubResource("LabelSettings_kdciu")
 
 [node name="Control" type="Control" parent="Control"]
 layout_mode = 1
@@ -385,7 +360,7 @@ text = "SCORE"
 label_settings = SubResource("LabelSettings_yuinv")
 horizontal_alignment = 1
 
-[node name="SCORE_LABEL" type="Label" parent="Control/Control/Label2"]
+[node name="Label" type="Label" parent="Control/Control/Label2"]
 layout_mode = 1
 offset_left = 33.0
 offset_top = 55.0
@@ -417,7 +392,7 @@ text = "HI-SCORE"
 label_settings = SubResource("LabelSettings_yuinv")
 horizontal_alignment = 1
 
-[node name="HI_SCORE" type="Label" parent="Control/Control3/Label2"]
+[node name="Label" type="Label" parent="Control/Control3/Label2"]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -440,7 +415,7 @@ offset_right = 61.0
 offset_bottom = -27.0
 grow_vertical = 0
 
-[node name="LIVE" type="Label" parent="Control/Control2"]
+[node name="Label" type="Label" parent="Control/Control2"]
 layout_mode = 2
 offset_right = 23.0
 offset_bottom = 58.0

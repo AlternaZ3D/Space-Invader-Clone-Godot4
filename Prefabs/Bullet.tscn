@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dc6o6p5nythg8" path="res://Prefabs/Explode.tscn" id="2_nv68w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1ke4l"]
-size = Vector2(2, 6)
+size = Vector2(4, 8)
 
 [node name="Bullet" type="Area2D" groups=["bullet"]]
 script = ExtResource("1_f5xms")

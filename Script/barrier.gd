@@ -11,7 +11,7 @@ func _ready():
 	pass # Replace with function body.
 
 func _on_area_entered(area):
-		if area.is_in_group("bullet"):#ตรวจว่าสิ่งที่ชนใช่กระสุนหรือเปล่า
+		if area.is_in_group("bullet") or area.is_in_group("laser"):#ตรวจว่าสิ่งที่ชนใช่กระสุนหรือเปล่า
 			_hp=_hp-1
 			if _hp <=0:queue_free()
 			_decay()

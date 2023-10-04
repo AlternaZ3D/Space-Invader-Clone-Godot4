@@ -1,12 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://xa7d0jlnoep6"]
+[gd_scene load_steps=6 format=3 uid="uid://xa7d0jlnoep6"]
 
 [ext_resource type="PackedScene" uid="uid://cpih6x6q5yfgd" path="res://Prefabs/Enemy30.tscn" id="1_f2nmm"]
 [ext_resource type="Script" path="res://Script/Enemy_Parent.gd" id="1_pppsi"]
+[ext_resource type="PackedScene" uid="uid://c1wu5awgjlf4a" path="res://Prefabs/Laser.tscn" id="2_uggi2"]
 [ext_resource type="PackedScene" uid="uid://47775anr7g1t" path="res://Prefabs/Enemy20.tscn" id="2_v0ij5"]
 [ext_resource type="PackedScene" uid="uid://j4qpmde3nkwc" path="res://Prefabs/Enemy10.tscn" id="3_fcfom"]
 
 [node name="Enemy_Parent" type="Node2D"]
 script = ExtResource("1_pppsi")
+_laser_prefab = ExtResource("2_uggi2")
 
 [node name="Enemy30" parent="." instance=ExtResource("1_f2nmm")]
 position = Vector2(-233, -96)

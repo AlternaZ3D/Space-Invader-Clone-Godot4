@@ -20,7 +20,7 @@ func _physics_process(delta):
 	_shoot_logic()
 	pass
 	
-func _move_logic():
+func _move_logic():#ตรรกะการเคลื่อนที่
 	var direction = Input.get_axis("move_left", "move_right")#รับค่าจากInput
 	if direction:
 		velocity.x = direction * _speed
@@ -29,7 +29,7 @@ func _move_logic():
 	position.x = clamp(position.x,_position_offset ,_position.x-_position_offset)#ห้ามไม่ให้ตัวผู้เล่นออกนอกหน้าจอ
 	move_and_slide()
 	pass
-func _shoot_logic():
+func _shoot_logic():#ตรรกะการยิงกระสุน
 	_check_can_shoot()
 	var shooting = Input.is_action_just_pressed("shoot")#รับค่าจากInput
 	if shooting and _can_shoot:
@@ -38,8 +38,8 @@ func _shoot_logic():
 			_bullet_parent.add_child(b)#ย้ายไปอยู่ใต้bullet parent ถ้าไม่มีบรรทัดนี้กระสุนจะขยับตามยานผู้เล่น
 			#print ("Nice shot!!!")
 	pass
-func _check_can_shoot():
-	if get_tree().get_nodes_in_group("bullet").size()>=1:#ตรวจว่ามีกระสุนอยู่บนหน้าจอหรือยังจะได้ไม่ยิงถี่ๆ
+func _check_can_shoot():#ตรวจว่ามีกระสุนอยู่บนหน้าจอหรือยังจะได้ไม่ยิงถี่ๆ
+	if get_tree().get_nodes_in_group("bullet").size()>=1:
 		_can_shoot = false
 	else : _can_shoot = true
 	pass

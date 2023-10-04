@@ -1,10 +1,22 @@
 extends Node
+var _enemy_left:int
+var _lives:int
+var _score:int
 var _hi_score:int
 
+func _physics_process(delta):
+	if _score>_hi_score: _hi_score = _score
+	pass
+
 func _game_over():#สิ่งที่จะทำเมื่อเกมโอเวอ
+	await get_tree().create_timer(2.0).timeout
 	get_tree().change_scene_to_file("res://Scene/GAME_OVER.tscn")#ไปที่Sceneหน้าGameOver
 	pass
 
-func _you_win():#สิ่งที่จะทำเมื่อเกมโอเวอ
+func _you_win():#สิ่งที่จะทำเมื่อชนะเกม
+	await get_tree().create_timer(2.0).timeout
 	get_tree().change_scene_to_file("res://Scene/YOU_WIN.tscn")#ไปที่Sceneหน้าGameOver
+	pass
+
+func _respawn_player():
 	pass

@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://c1wu5awgjlf4a"]
+
+[ext_resource type="Script" path="res://Script/Laser.gd" id="1_1nadf"]
+[ext_resource type="Texture2D" uid="uid://b35mbenlr6ev0" path="res://Sprite/laser.png" id="1_eivpm"]
+[ext_resource type="PackedScene" uid="uid://dc6o6p5nythg8" path="res://Prefabs/Explode.tscn" id="2_7rwpq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wfsd8"]
+size = Vector2(6, 10)
+
+[node name="Laser" type="Area2D" groups=["laser"]]
+scale = Vector2(1.5, 1.5)
+script = ExtResource("1_1nadf")
+_explode = ExtResource("2_7rwpq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_eivpm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_wfsd8")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

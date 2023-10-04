@@ -1,12 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://c1ibt220h8m2q"]
+[gd_scene load_steps=8 format=3 uid="uid://c1ibt220h8m2q"]
+
+[ext_resource type="Script" path="res://Script/YouWinUI.gd" id="1_ogseq"]
 
 [sub_resource type="FontFile" id="FontFile_30ii5"]
 subpixel_positioning = 0
 msdf_pixel_range = 14
 msdf_size = 128
-face_index = null
-embolden = null
-transform = null
 cache/0/40/0/ascent = 0.0
 cache/0/40/0/descent = 0.0
 cache/0/40/0/underline_position = 0.0
@@ -31,9 +30,6 @@ outline_size = 5
 subpixel_positioning = 0
 msdf_pixel_range = 14
 msdf_size = 128
-face_index = null
-embolden = null
-transform = null
 cache/0/16/0/ascent = 0.0
 cache/0/16/0/descent = 0.0
 cache/0/16/0/underline_position = 0.0
@@ -67,9 +63,6 @@ font_size = 30
 subpixel_positioning = 0
 msdf_pixel_range = 14
 msdf_size = 128
-face_index = null
-embolden = null
-transform = null
 cache/0/16/0/ascent = 0.0
 cache/0/16/0/descent = 0.0
 cache/0/16/0/underline_position = 0.0
@@ -90,7 +83,10 @@ font = SubResource("FontFile_yb74n")
 font_size = 30
 outline_size = 5
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Node2D" node_paths=PackedStringArray("_score", "_hi_score")]
+script = ExtResource("1_ogseq")
+_score = NodePath("GameOverUI/VBoxContainer/HBoxContainer/Score")
+_hi_score = NodePath("GameOverUI/VBoxContainer/HBoxContainer2/Hi_Score")
 
 [node name="GameOverUI" type="Control" parent="."]
 layout_mode = 3
@@ -134,7 +130,7 @@ layout_mode = 2
 text = "Your score :"
 label_settings = SubResource("LabelSettings_jqqm1")
 
-[node name="MenuButton3" type="Label" parent="GameOverUI/VBoxContainer/HBoxContainer"]
+[node name="Score" type="Label" parent="GameOverUI/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 text = "0000"
 label_settings = SubResource("LabelSettings_jqqm1")
@@ -146,10 +142,10 @@ size_flags_horizontal = 4
 [node name="MenuButton4" type="Label" parent="GameOverUI/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 0
-text = "High Score :"
+text = "Hi Score :"
 label_settings = SubResource("LabelSettings_jqqm1")
 
-[node name="MenuButton3" type="Label" parent="GameOverUI/VBoxContainer/HBoxContainer2"]
+[node name="Hi_Score" type="Label" parent="GameOverUI/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 text = "0000"
 label_settings = SubResource("LabelSettings_jqqm1")

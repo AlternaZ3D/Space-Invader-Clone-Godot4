@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qdl6u"]
 size = Vector2(34, 25)
 
-[node name="Enemy10" type="CharacterBody2D" groups=["enemy"]]
+[node name="Enemy10" type="CharacterBody2D" groups=["10", "enemy"]]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_1fpeh")
