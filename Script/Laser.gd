@@ -1,6 +1,6 @@
 extends Area2D
 
-var _speed = 150
+var _speed = 250
 @export var _explode:PackedScene
 
 func _physics_process(delta):#เคลื่อนที่ลงด้านล่างตลอดเวลา

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bxio86r21kw3s"]
+[gd_scene load_steps=15 format=3 uid="uid://bxio86r21kw3s"]
 
 [ext_resource type="PackedScene" uid="uid://0gk1i6rk2ba2" path="res://Prefabs/BG.tscn" id="1_5r7nt"]
 [ext_resource type="PackedScene" uid="uid://dgv0f522uhvtm" path="res://Prefabs/Player.tscn" id="1_v4fkh"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c0hu65d7pqkjg" path="res://Prefabs/Enemy_Bonus.tscn" id="4_il64u"]
 [ext_resource type="PackedScene" uid="uid://d8b1wj0maw0p" path="res://Prefabs/Barrier.tscn" id="7_25xlw"]
 [ext_resource type="Script" path="res://Script/GameManager.gd" id="8_tuw3m"]
+[ext_resource type="AudioStream" uid="uid://c6p2qv2nqt5jm" path="res://Sound/game play song.wav" id="9_7f1ec"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_02kej"]
 size = Vector2(610, 124)
@@ -103,6 +104,10 @@ position = Vector2(300, 700)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_7f1ec")
+autoplay = true
 
 [connection signal="body_entered" from="Direction change" to="Enemy_Parent" method="_on_direction_change_body_entered"]
 [connection signal="body_entered" from="Border" to="Enemy_Parent" method="_on_border_body_entered"]
