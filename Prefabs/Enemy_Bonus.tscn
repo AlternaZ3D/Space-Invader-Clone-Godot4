@@ -1,8 +1,44 @@
-[gd_scene load_steps=5 format=3 uid="uid://c0hu65d7pqkjg"]
+[gd_scene load_steps=10 format=3 uid="uid://c0hu65d7pqkjg"]
 
 [ext_resource type="Script" path="res://Script/Enemy_Bonus.gd" id="1_82dun"]
 [ext_resource type="Texture2D" uid="uid://btta7ag8pjt7u" path="res://Sprite/enemy_bonus.png" id="1_ru0o8"]
 [ext_resource type="AudioStream" uid="uid://ix24ubdudsuo" path="res://Sound/bonus.wav" id="3_bjtp8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x0k0x"]
+atlas = ExtResource("1_ru0o8")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_im3ab"]
+atlas = ExtResource("1_ru0o8")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lvykn"]
+atlas = ExtResource("1_ru0o8")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_atw56"]
+atlas = ExtResource("1_ru0o8")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wat0e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x0k0x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_im3ab")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lvykn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_atw56")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qdl6u"]
 size = Vector2(34, 34)
@@ -11,8 +47,10 @@ size = Vector2(34, 34)
 scale = Vector2(1.5, 1.5)
 script = ExtResource("1_82dun")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_ru0o8")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_wat0e")
+autoplay = "default"
+frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_qdl6u")

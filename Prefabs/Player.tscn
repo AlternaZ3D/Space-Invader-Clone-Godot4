@@ -1,8 +1,44 @@
-[gd_scene load_steps=5 format=3 uid="uid://dgv0f522uhvtm"]
+[gd_scene load_steps=10 format=3 uid="uid://dgv0f522uhvtm"]
 
 [ext_resource type="Texture2D" uid="uid://bkto1i2ynkddn" path="res://Sprite/player.png" id="1_an0py"]
 [ext_resource type="Script" path="res://Script/Player.gd" id="1_k0rjv"]
 [ext_resource type="PackedScene" uid="uid://cw76sif21y2dp" path="res://Prefabs/Bullet.tscn" id="2_w50j0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_23gvp"]
+atlas = ExtResource("1_an0py")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qoy38"]
+atlas = ExtResource("1_an0py")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w3r12"]
+atlas = ExtResource("1_an0py")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3h2sy"]
+atlas = ExtResource("1_an0py")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lieig"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_23gvp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qoy38")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w3r12")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3h2sy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7fl1c"]
 size = Vector2(32, 17)
@@ -11,8 +47,9 @@ size = Vector2(32, 17)
 script = ExtResource("1_k0rjv")
 Bullet = ExtResource("2_w50j0")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_an0py")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_lieig")
+autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 7.5)

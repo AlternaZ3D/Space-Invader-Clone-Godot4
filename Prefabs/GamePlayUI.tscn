@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://csw8pkvj4je8x"]
 
-[ext_resource type="Texture2D" uid="uid://bkto1i2ynkddn" path="res://Sprite/player.png" id="1_inag7"]
 [ext_resource type="Script" path="res://Script/GamePlayUI.gd" id="1_x8kds"]
+[ext_resource type="Texture2D" uid="uid://cv2rdmr7s21u3" path="res://Sprite/player_ui.png" id="2_fow3l"]
 
 [sub_resource type="SystemFont" id="SystemFont_i7xxk"]
 subpixel_positioning = 0
@@ -136,8 +136,8 @@ anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 21.0
-offset_top = -67.0
-offset_right = 61.0
+offset_top = -82.0
+offset_right = 135.0
 offset_bottom = -27.0
 grow_vertical = 0
 
@@ -158,5 +158,5 @@ size_flags_vertical = 4
 
 [node name="TextureRect" type="TextureRect" parent="Control/Control2/HBoxContainer"]
 layout_mode = 2
-texture = ExtResource("1_inag7")
+texture = ExtResource("2_fow3l")
 expand_mode = 3

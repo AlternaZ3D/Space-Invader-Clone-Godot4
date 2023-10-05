@@ -4,15 +4,12 @@ extends CharacterBody2D
 @export var _speed = 300.0
 @export var Bullet:PackedScene
 var _bullet_parent:Node2D
-var _texture:Texture
 var _position:Vector2
-var _position_offset:int
+var _position_offset:int = 16
 var _can_shoot:bool = true
 
 func _ready():
-	_texture = get_node("Sprite2D").get_texture()#อ่านค่าSpriteจากSprite2DในPlayer
 	_position = get_viewport_rect().size#หาขนาดหน้าต่างเกม
-	_position_offset = _texture.get_size().x/2#หาขนาดจากจุดกึ่งกลางตัวละครผู้เล่น
 	pass
 
 func _physics_process(delta):
