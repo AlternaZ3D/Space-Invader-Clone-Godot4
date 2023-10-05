@@ -19,6 +19,7 @@ config/icon="res://MyICON.png"
 [autoload]
 
 Global="*res://Script/global.gd"
+SaveSettings="*res://save_settings.gd"
 
 [display]
 

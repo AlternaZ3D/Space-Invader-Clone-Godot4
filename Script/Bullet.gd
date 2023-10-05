@@ -4,7 +4,6 @@ var _speed = 650
 @export var _explode:PackedScene
 
 func _physics_process(delta):
-	_global_update()
 	global_position -= transform.y * _speed * delta#เคลื่อนที่ขึ้นด้านบนตลอดเวลา
 	pass
 
@@ -28,5 +27,4 @@ func _exploding():#สร้างกราฟฟิคระเบิดขึ�
 	_bullet_parent.add_child(e)
 	queue_free()
 	pass
-func _global_update():
-	pass
+

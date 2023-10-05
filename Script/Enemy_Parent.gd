@@ -1,6 +1,6 @@
 extends Node2D
 
-const LASER_COOLDOWN:float = 3.0
+const LASER_COOLDOWN:float = 1.5
 const  SPEED_INITIAL:float = 0.25
 var _speed:float
 enum DIRECTION {DOWN, RIGHT, LEFT}

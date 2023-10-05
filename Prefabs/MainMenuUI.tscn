@@ -3,47 +3,19 @@
 [ext_resource type="Texture2D" uid="uid://bvth6c18jc30d" path="res://Sprite/main_menu_image.png" id="1_mqhge"]
 [ext_resource type="Script" path="res://Script/MainMenuUI.gd" id="1_tn8h0"]
 
-[sub_resource type="FontFile" id="FontFile_67x8b"]
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/16/0/kerning_overrides/40/0 = Vector2(0, 0)
-cache/0/40/0/ascent = 0.0
-cache/0/40/0/descent = 0.0
-cache/0/40/0/underline_position = 0.0
-cache/0/40/0/underline_thickness = 0.0
-cache/0/40/0/scale = 1.0
-cache/0/40/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/40/0/kerning_overrides/40/0 = Vector2(0, 0)
+[sub_resource type="SystemFont" id="SystemFont_mhoe4"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_1u6xw"]
-font = SubResource("FontFile_67x8b")
+font = SubResource("SystemFont_mhoe4")
 font_size = 40
-outline_size = 5
+outline_size = 1
 
-[sub_resource type="FontFile" id="FontFile_vghea"]
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/16/0/kerning_overrides/40/0 = Vector2(0, 0)
-cache/0/40/0/ascent = 0.0
-cache/0/40/0/descent = 0.0
-cache/0/40/0/underline_position = 0.0
-cache/0/40/0/underline_thickness = 0.0
-cache/0/40/0/scale = 1.0
-cache/0/40/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/40/0/kerning_overrides/40/0 = Vector2(0, 0)
+[sub_resource type="SystemFont" id="SystemFont_f46x8"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_tvdo4"]
-font = SubResource("FontFile_vghea")
+font = SubResource("SystemFont_f46x8")
 font_size = 40
-outline_size = 5
+outline_size = 1
 
 [node name="MainMenuUI" type="Node2D" node_paths=PackedStringArray("_hi_score")]
 script = ExtResource("1_tn8h0")
@@ -80,10 +52,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -152.5
-offset_top = -90.0
-offset_right = 152.5
-offset_bottom = -32.0
+offset_left = -132.0
+offset_top = -117.0
+offset_right = 132.0
+offset_bottom = -59.0
 grow_horizontal = 2
 grow_vertical = 0
 
