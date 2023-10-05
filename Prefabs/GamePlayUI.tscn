@@ -4,6 +4,7 @@
 [ext_resource type="Script" path="res://Script/GamePlayUI.gd" id="1_x8kds"]
 
 [sub_resource type="SystemFont" id="SystemFont_i7xxk"]
+subpixel_positioning = 0
 
 [sub_resource type="LabelSettings" id="LabelSettings_yuinv"]
 font = SubResource("SystemFont_i7xxk")
@@ -11,6 +12,7 @@ font_size = 40
 outline_size = 1
 
 [sub_resource type="SystemFont" id="SystemFont_ovx5c"]
+subpixel_positioning = 0
 
 [sub_resource type="LabelSettings" id="LabelSettings_kdciu"]
 font = SubResource("SystemFont_ovx5c")
@@ -18,6 +20,7 @@ font_size = 40
 outline_size = 1
 
 [sub_resource type="SystemFont" id="SystemFont_mbdj1"]
+subpixel_positioning = 0
 
 [sub_resource type="LabelSettings" id="LabelSettings_pcn6a"]
 font = SubResource("SystemFont_mbdj1")
@@ -154,16 +157,6 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 
 [node name="TextureRect" type="TextureRect" parent="Control/Control2/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("1_inag7")
-expand_mode = 3
-
-[node name="TextureRect2" type="TextureRect" parent="Control/Control2/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("1_inag7")
-expand_mode = 3
-
-[node name="TextureRect3" type="TextureRect" parent="Control/Control2/HBoxContainer"]
 layout_mode = 2
 texture = ExtResource("1_inag7")
 expand_mode = 3

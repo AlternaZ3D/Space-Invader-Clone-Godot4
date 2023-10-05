@@ -4,6 +4,7 @@
 [ext_resource type="Script" path="res://Script/MainMenuUI.gd" id="1_tn8h0"]
 
 [sub_resource type="SystemFont" id="SystemFont_mhoe4"]
+subpixel_positioning = 0
 
 [sub_resource type="LabelSettings" id="LabelSettings_1u6xw"]
 font = SubResource("SystemFont_mhoe4")
@@ -11,6 +12,7 @@ font_size = 40
 outline_size = 1
 
 [sub_resource type="SystemFont" id="SystemFont_f46x8"]
+subpixel_positioning = 0
 
 [sub_resource type="LabelSettings" id="LabelSettings_tvdo4"]
 font = SubResource("SystemFont_f46x8")

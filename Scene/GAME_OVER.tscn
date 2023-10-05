@@ -12,3 +12,6 @@ _scene = "res://Scene/MAIN_MENU.tscn"
 [node name="BG" parent="." instance=ExtResource("1_o5s8d")]
 
 [node name="GameOverUI" parent="." instance=ExtResource("1_pk5rd")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0

@@ -12,3 +12,6 @@ _scene = "res://Scene/GAME_PLAY.tscn"
 [node name="BG" parent="." instance=ExtResource("1_ttkuc")]
 
 [node name="MainMenuUI" parent="." instance=ExtResource("1_0mb66")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0

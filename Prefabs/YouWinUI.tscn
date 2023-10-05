@@ -2,86 +2,29 @@
 
 [ext_resource type="Script" path="res://Script/YouWinUI.gd" id="1_ogseq"]
 
-[sub_resource type="FontFile" id="FontFile_30ii5"]
+[sub_resource type="SystemFont" id="SystemFont_uyovw"]
 subpixel_positioning = 0
-msdf_pixel_range = 14
-msdf_size = 128
-cache/0/40/0/ascent = 0.0
-cache/0/40/0/descent = 0.0
-cache/0/40/0/underline_position = 0.0
-cache/0/40/0/underline_thickness = 0.0
-cache/0/40/0/scale = 1.0
-cache/0/40/0/kerning_overrides/40/0 = Vector2(0, 0)
-cache/0/40/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/16/0/kerning_overrides/40/0 = Vector2(0, 0)
-cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
 
 [sub_resource type="LabelSettings" id="LabelSettings_s760l"]
-font = SubResource("FontFile_30ii5")
+font = SubResource("SystemFont_uyovw")
 font_size = 40
-outline_size = 5
+outline_size = 1
 
-[sub_resource type="FontFile" id="FontFile_afb7i"]
+[sub_resource type="SystemFont" id="SystemFont_mqa0i"]
 subpixel_positioning = 0
-msdf_pixel_range = 14
-msdf_size = 128
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/16/0/kerning_overrides/20/0 = Vector2(0, 0)
-cache/0/16/0/kerning_overrides/30/0 = Vector2(0, 0)
-cache/0/20/0/ascent = 0.0
-cache/0/20/0/descent = 0.0
-cache/0/20/0/underline_position = 0.0
-cache/0/20/0/underline_thickness = 0.0
-cache/0/20/0/scale = 1.0
-cache/0/20/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/20/0/kerning_overrides/20/0 = Vector2(0, 0)
-cache/0/20/0/kerning_overrides/30/0 = Vector2(0, 0)
-cache/0/30/0/ascent = 0.0
-cache/0/30/0/descent = 0.0
-cache/0/30/0/underline_position = 0.0
-cache/0/30/0/underline_thickness = 0.0
-cache/0/30/0/scale = 1.0
-cache/0/30/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/30/0/kerning_overrides/20/0 = Vector2(0, 0)
-cache/0/30/0/kerning_overrides/30/0 = Vector2(0, 0)
 
 [sub_resource type="LabelSettings" id="LabelSettings_jqqm1"]
-font = SubResource("FontFile_afb7i")
+font = SubResource("SystemFont_mqa0i")
 font_size = 30
+outline_size = 1
 
-[sub_resource type="FontFile" id="FontFile_yb74n"]
+[sub_resource type="SystemFont" id="SystemFont_wisp7"]
 subpixel_positioning = 0
-msdf_pixel_range = 14
-msdf_size = 128
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/16/0/kerning_overrides/30/0 = Vector2(0, 0)
-cache/0/30/0/ascent = 0.0
-cache/0/30/0/descent = 0.0
-cache/0/30/0/underline_position = 0.0
-cache/0/30/0/underline_thickness = 0.0
-cache/0/30/0/scale = 1.0
-cache/0/30/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/30/0/kerning_overrides/30/0 = Vector2(0, 0)
 
 [sub_resource type="LabelSettings" id="LabelSettings_8gjih"]
-font = SubResource("FontFile_yb74n")
+font = SubResource("SystemFont_wisp7")
 font_size = 30
-outline_size = 5
+outline_size = 1
 
 [node name="Node2D" type="Node2D" node_paths=PackedStringArray("_score", "_hi_score")]
 script = ExtResource("1_ogseq")

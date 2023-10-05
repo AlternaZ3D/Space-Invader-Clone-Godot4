@@ -9,14 +9,11 @@ func _physics_process(delta):
 	pass
 
 func _game_over():#สิ่งที่จะทำเมื่อเกมโอเวอ
-	await get_tree().create_timer(2.0).timeout
+	await get_tree().create_timer(1.0).timeout
 	get_tree().change_scene_to_file("res://Scene/GAME_OVER.tscn")#ไปที่Sceneหน้าGameOver
 	pass
 
 func _you_win():#สิ่งที่จะทำเมื่อชนะเกม
-	await get_tree().create_timer(2.0).timeout
+	await get_tree().create_timer(1.0).timeout
 	get_tree().change_scene_to_file("res://Scene/YOU_WIN.tscn")#ไปที่Sceneหน้าGameOver
-	pass
-
-func _respawn_player():
 	pass

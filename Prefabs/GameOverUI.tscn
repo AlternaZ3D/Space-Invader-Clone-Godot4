@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://Script/GameOverUI.gd" id="1_ei3vu"]
 
 [sub_resource type="SystemFont" id="SystemFont_w152k"]
+subpixel_positioning = 0
 
 [sub_resource type="LabelSettings" id="LabelSettings_s760l"]
 font = SubResource("SystemFont_w152k")
@@ -10,12 +11,14 @@ font_size = 40
 outline_size = 1
 
 [sub_resource type="SystemFont" id="SystemFont_dgfpn"]
+subpixel_positioning = 0
 
 [sub_resource type="LabelSettings" id="LabelSettings_jqqm1"]
 font = SubResource("SystemFont_dgfpn")
 font_size = 30
 
 [sub_resource type="SystemFont" id="SystemFont_j73jb"]
+subpixel_positioning = 0
 
 [sub_resource type="LabelSettings" id="LabelSettings_8gjih"]
 font = SubResource("SystemFont_j73jb")

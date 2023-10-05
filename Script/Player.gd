@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 @export var _speed = 300.0
 @export var Bullet:PackedScene
-@export var _bullet_parent:Node2D
+var _bullet_parent:Node2D
 var _texture:Texture
 var _position:Vector2
 var _position_offset:int
@@ -29,18 +29,20 @@ func _move_logic():#ตรรกะการเคลื่อนที่
 	position.x = clamp(position.x,_position_offset ,_position.x-_position_offset)#ห้ามไม่ให้ตัวผู้เล่นออกนอกหน้าจอ
 	move_and_slide()
 	pass
-func _shoot_logic():#ตรรกะการยิงกระสุน
-	_check_can_shoot()
-	var shooting = Input.is_action_just_pressed("shoot")#รับค่าจากInput
-	if shooting and _can_shoot:
-			var b = Bullet.instantiate()#สร้างBulletจากPrefabs
-			b.transform = global_transform#ปรับตำแหน่งให้อยู่ที่เดียวกับplayer
-			_bullet_parent.add_child(b)#ย้ายไปอยู่ใต้bullet parent ถ้าไม่มีบรรทัดนี้กระสุนจะขยับตามยานผู้เล่น
-			#print ("Nice shot!!!")
-	pass
+
 func _check_can_shoot():#ตรวจว่ามีกระสุนอยู่บนหน้าจอหรือยังจะได้ไม่ยิงถี่ๆ
 	if get_tree().get_nodes_in_group("bullet").size()>=1:
 		_can_shoot = false
 	else : _can_shoot = true
 	pass
 	
+func _shoot_logic():#ตรรกะการยิงกระสุน
+	_check_can_shoot()
+	var shooting = Input.is_action_just_pressed("shoot")#รับค่าจากInput
+	if shooting and _can_shoot:
+			var b = Bullet.instantiate()#สร้างBulletจากPrefabs
+			b.transform = global_transform#ปรับตำแหน่งให้อยู่ที่เดียวกับplayer
+			_bullet_parent = self.get_parent()
+			_bullet_parent.add_child(b)#ย้ายกระสุนไปไว้ที่ๆไม่ใช่playerไม่งั้นจะวิ่งตามๆกัน
+			#print ("Nice shot!!!")
+	pass
