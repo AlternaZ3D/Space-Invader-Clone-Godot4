@@ -41,16 +41,17 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7fl1c"]
-size = Vector2(32, 17)
+size = Vector2(44, 22)
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_k0rjv")
 Bullet = ExtResource("2_w50j0")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_lieig")
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 7.5)
+position = Vector2(0, 10)
 shape = SubResource("RectangleShape2D_7fl1c")

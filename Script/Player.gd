@@ -12,7 +12,7 @@ func _ready():
 	_position = get_viewport_rect().size#หาขนาดหน้าต่างเกม
 	pass
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	_move_logic()
 	_shoot_logic()
 	pass

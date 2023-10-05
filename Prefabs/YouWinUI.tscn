@@ -26,7 +26,7 @@ font = SubResource("SystemFont_wisp7")
 font_size = 30
 outline_size = 1
 
-[node name="Node2D" type="Node2D" node_paths=PackedStringArray("_score", "_hi_score")]
+[node name="YouWin" type="Node2D" node_paths=PackedStringArray("_score", "_hi_score")]
 script = ExtResource("1_ogseq")
 _score = NodePath("GameOverUI/VBoxContainer/HBoxContainer/Score")
 _hi_score = NodePath("GameOverUI/VBoxContainer/HBoxContainer2/Hi_Score")
@@ -48,10 +48,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -149.0
+offset_top = -217.0
+offset_right = 149.0
+offset_bottom = 46.0
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1

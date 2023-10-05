@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Space-Invader-Clone-Godot4"
+config/name="Invader from Another Space"
 config/description="โปรเจกเริ่มต้นสำหรับเรียนรู้การใช้งานGodot4โดยการทำclone gameใช้ต้นแบบมาจากSpace invaderที่เป็นclassic arcadeเกมตู้"
 run/main_scene="res://Scene/MAIN_MENU.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")

@@ -1,4 +1,42 @@
-[gd_scene format=3 uid="uid://0gk1i6rk2ba2"]
+[gd_scene load_steps=7 format=3 uid="uid://0gk1i6rk2ba2"]
+
+[ext_resource type="Texture2D" uid="uid://cqocc3hcw35ak" path="res://Sprite/BG.png" id="1_kss2x"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t3q3s"]
+atlas = ExtResource("1_kss2x")
+region = Rect2(0, 0, 60, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uuigr"]
+atlas = ExtResource("1_kss2x")
+region = Rect2(60, 0, 60, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qabko"]
+atlas = ExtResource("1_kss2x")
+region = Rect2(0, 80, 60, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0egt0"]
+atlas = ExtResource("1_kss2x")
+region = Rect2(60, 80, 60, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yd5bw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t3q3s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uuigr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qabko")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0egt0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="BG" type="Node2D"]
 
@@ -12,11 +50,8 @@ offset_bottom = 800.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="Control"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.0862745, 0.0862745, 0.0862745, 1)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Control"]
+position = Vector2(301, 403.333)
+scale = Vector2(10.3333, 10.2833)
+sprite_frames = SubResource("SpriteFrames_yd5bw")
+autoplay = "default"

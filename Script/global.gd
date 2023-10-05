@@ -4,7 +4,7 @@ var _lives:int
 var _score:int
 var _hi_score:int
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if _score>_hi_score: _hi_score = _score
 	pass
 
