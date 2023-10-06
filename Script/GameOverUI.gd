@@ -7,7 +7,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	_score.text = str(Global._score)
 	_hi_score.text = str(Global._hi_score)
 	pass
