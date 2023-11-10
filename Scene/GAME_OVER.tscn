@@ -10,13 +10,35 @@ script = ExtResource("1_dtlkk")
 _key = "confirm"
 _scene = "res://Scene/MAIN_MENU.tscn"
 
-[node name="BG" parent="." instance=ExtResource("1_o5s8d")]
+[node name="Panel" type="Control" parent="."]
+clip_children = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
-[node name="GameOverUI" parent="." instance=ExtResource("1_pk5rd")]
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="SubViewport" type="SubViewport" parent="Panel/SubViewportContainer"]
+handle_input_locally = false
+canvas_item_default_texture_filter = 0
+size = Vector2i(600, 800)
+render_target_update_mode = 4
+
+[node name="BG" parent="Panel/SubViewportContainer/SubViewport" instance=ExtResource("1_o5s8d")]
+
+[node name="GameOverUI" parent="Panel/SubViewportContainer/SubViewport" instance=ExtResource("1_pk5rd")]
+
+[node name="Camera2D" type="Camera2D" parent="Panel/SubViewportContainer/SubViewport"]
 anchor_mode = 0
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_hvaum")
 autoplay = true

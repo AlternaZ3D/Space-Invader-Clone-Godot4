@@ -27,90 +27,112 @@ size = Vector2(632, 22)
 
 [node name="GAME_PLAY" type="Node2D"]
 
-[node name="BG" parent="." instance=ExtResource("1_5r7nt")]
+[node name="Panel" type="Control" parent="."]
+clip_children = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
-[node name="BarrierParent" type="Node2D" parent="."]
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
 
-[node name="Barrier" parent="BarrierParent" instance=ExtResource("7_25xlw")]
+[node name="SubViewport" type="SubViewport" parent="Panel/SubViewportContainer"]
+handle_input_locally = false
+canvas_item_default_texture_filter = 0
+size = Vector2i(600, 800)
+render_target_update_mode = 4
+
+[node name="BG" parent="Panel/SubViewportContainer/SubViewport" instance=ExtResource("1_5r7nt")]
+
+[node name="BarrierParent" type="Node2D" parent="Panel/SubViewportContainer/SubViewport"]
+
+[node name="Barrier" parent="Panel/SubViewportContainer/SubViewport/BarrierParent" instance=ExtResource("7_25xlw")]
 position = Vector2(92, 590)
 
-[node name="Barrier2" parent="BarrierParent" instance=ExtResource("7_25xlw")]
+[node name="Barrier2" parent="Panel/SubViewportContainer/SubViewport/BarrierParent" instance=ExtResource("7_25xlw")]
 position = Vector2(227, 590)
 
-[node name="Barrier3" parent="BarrierParent" instance=ExtResource("7_25xlw")]
+[node name="Barrier3" parent="Panel/SubViewportContainer/SubViewport/BarrierParent" instance=ExtResource("7_25xlw")]
 position = Vector2(364, 590)
 
-[node name="Barrier4" parent="BarrierParent" instance=ExtResource("7_25xlw")]
+[node name="Barrier4" parent="Panel/SubViewportContainer/SubViewport/BarrierParent" instance=ExtResource("7_25xlw")]
 position = Vector2(499, 590)
 
-[node name="Boundary" type="Area2D" parent="." groups=["boundary"]]
+[node name="Boundary" type="Area2D" parent="Panel/SubViewportContainer/SubViewport" groups=["boundary"]]
 
-[node name="Upper" type="CollisionShape2D" parent="Boundary"]
+[node name="Upper" type="CollisionShape2D" parent="Panel/SubViewportContainer/SubViewport/Boundary"]
 position = Vector2(295, 52)
 shape = SubResource("RectangleShape2D_02kej")
 
-[node name="Lower" type="CollisionShape2D" parent="Boundary"]
+[node name="Lower" type="CollisionShape2D" parent="Panel/SubViewportContainer/SubViewport/Boundary"]
 position = Vector2(295, 802)
 shape = SubResource("RectangleShape2D_02kej")
 
-[node name="Direction change" type="Area2D" parent="." groups=["direction_change"]]
+[node name="Direction change" type="Area2D" parent="Panel/SubViewportContainer/SubViewport" groups=["direction_change"]]
 
-[node name="Left" type="CollisionShape2D" parent="Direction change"]
+[node name="Left" type="CollisionShape2D" parent="Panel/SubViewportContainer/SubViewport/Direction change"]
 position = Vector2(-59.5, 414.5)
 shape = SubResource("RectangleShape2D_tdgsk")
 
-[node name="Right" type="CollisionShape2D" parent="Direction change"]
+[node name="Right" type="CollisionShape2D" parent="Panel/SubViewportContainer/SubViewport/Direction change"]
 position = Vector2(662.5, 427.5)
 shape = SubResource("RectangleShape2D_c0rrc")
 
-[node name="Border" type="Area2D" parent="."]
+[node name="Border" type="Area2D" parent="Panel/SubViewportContainer/SubViewport"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Border"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Panel/SubViewportContainer/SubViewport/Border"]
 position = Vector2(302, 651)
 shape = SubResource("RectangleShape2D_urr0b")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Border"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Panel/SubViewportContainer/SubViewport/Border"]
 position = Vector2(300, 670)
 shape = SubResource("RectangleShape2D_s0krd")
 
-[node name="Bonus Spawn" type="Node2D" parent="." node_paths=PackedStringArray("_spawn_pointL", "_spawn_pointR")]
+[node name="Bonus Spawn" type="Node2D" parent="Panel/SubViewportContainer/SubViewport" node_paths=PackedStringArray("_spawn_pointL", "_spawn_pointR")]
 script = ExtResource("3_jqek5")
 _bonus_enemy = ExtResource("4_il64u")
 _spawn_pointL = NodePath("Left_side")
 _spawn_pointR = NodePath("Right_side")
 
-[node name="Left_side" type="Node2D" parent="Bonus Spawn"]
+[node name="Left_side" type="Node2D" parent="Panel/SubViewportContainer/SubViewport/Bonus Spawn"]
 position = Vector2(-109, 147)
 
-[node name="Right_side" type="Node2D" parent="Bonus Spawn"]
+[node name="Right_side" type="Node2D" parent="Panel/SubViewportContainer/SubViewport/Bonus Spawn"]
 position = Vector2(707, 147)
 
-[node name="Enemy_Parent" parent="." node_paths=PackedStringArray("_bullet_parent") instance=ExtResource("4_i7yg5")]
+[node name="Enemy_Parent" parent="Panel/SubViewportContainer/SubViewport" node_paths=PackedStringArray("_bullet_parent") instance=ExtResource("4_i7yg5")]
 position = Vector2(300, 270)
 _bullet_parent = NodePath("../BulletParent")
 
-[node name="BulletParent" type="Node2D" parent="."]
+[node name="BulletParent" type="Node2D" parent="Panel/SubViewportContainer/SubViewport"]
 
-[node name="GamePlayUI" parent="." instance=ExtResource("2_pbc6t")]
+[node name="GamePlayUI" parent="Panel/SubViewportContainer/SubViewport" instance=ExtResource("2_pbc6t")]
 
-[node name="GameManager" type="Node2D" parent="." node_paths=PackedStringArray("_respawn_point")]
+[node name="GameManager" type="Node2D" parent="Panel/SubViewportContainer/SubViewport" node_paths=PackedStringArray("_respawn_point")]
 script = ExtResource("8_tuw3m")
 _player = ExtResource("1_v4fkh")
 _respawn_point = NodePath("../RespawnPoint")
 
-[node name="Player" parent="GameManager" instance=ExtResource("1_v4fkh")]
+[node name="Player" parent="Panel/SubViewportContainer/SubViewport/GameManager" instance=ExtResource("1_v4fkh")]
 position = Vector2(300, 700)
 
-[node name="RespawnPoint" type="Node2D" parent="."]
+[node name="RespawnPoint" type="Node2D" parent="Panel/SubViewportContainer/SubViewport"]
 position = Vector2(300, 700)
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="Panel/SubViewportContainer/SubViewport"]
 anchor_mode = 0
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_7f1ec")
 autoplay = true
 
-[connection signal="body_entered" from="Direction change" to="Enemy_Parent" method="_on_direction_change_body_entered"]
-[connection signal="body_entered" from="Border" to="Enemy_Parent" method="_on_border_body_entered"]
-[connection signal="child_exiting_tree" from="GameManager" to="GameManager" method="_on_child_exiting_tree"]
+[connection signal="body_entered" from="Panel/SubViewportContainer/SubViewport/Direction change" to="Panel/SubViewportContainer/SubViewport/Enemy_Parent" method="_on_direction_change_body_entered"]
+[connection signal="body_entered" from="Panel/SubViewportContainer/SubViewport/Border" to="Panel/SubViewportContainer/SubViewport/Enemy_Parent" method="_on_border_body_entered"]
+[connection signal="child_exiting_tree" from="Panel/SubViewportContainer/SubViewport/GameManager" to="Panel/SubViewportContainer/SubViewport/GameManager" method="_on_child_exiting_tree"]
